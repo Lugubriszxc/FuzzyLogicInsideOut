@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&display=swap');
+
+body,html{
+    width: 100% !important;
+}
+.home {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100% !important;
+}
+
+
+.blue-container {
+    margin-top: 100px;
+    height: 500px;
+    width: 1940px;
+    background-color: #297CB8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.text-wrapper-5, .text-wrapper-6 {
+  
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.text-wrapper-5 {
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 55px;
+    width: 100%;
+}
+
+.text-wrapper-6 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    width: 100%;
+    font-weight: 200;
+}
+
+.btn-take{
+    font-family: "Montserrat", sans-serif;
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#B775F9;
+    color: white;
+    border: 0;
+}
