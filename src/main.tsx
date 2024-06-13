@@ -6,6 +6,6 @@ import HomePage from './Homepage.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <HomePage/>
+    <Survey/>
   </React.StrictMode>,
 )
