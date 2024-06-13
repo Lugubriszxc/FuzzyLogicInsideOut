@@ -16,6 +16,13 @@ const emotions = {
   Anger: Anger,
 };
 
+const data = [
+  { id: 1, title: "Joy", percentage: "33.3%", icon: Joy }, // Replace Anger with your actual icon import
+  { id: 2, title: "Fear", percentage: "50%", icon: Fear }, // Replace Anger with your actual icon import
+  { id: 3, title: "Anger", percentage: "25.5%", icon: Anger },
+  { id: 5, title: "Sadness", percentage: "25.5%", icon: Sadness },
+];
+
 const PredictionPage = () => {
   const emotionText = "Joy"; // This would be dynamically set based on your logic
   const emotionImage = emotions[emotionText];
@@ -50,54 +57,19 @@ const PredictionPage = () => {
       </div>
 
       <div className="tsx-cards-column">
-            <div className="tsx-card">
-                <div className="circle-icon">
-                    <img src={Anger} alt="TSX Icon" />
-                </div>
-                <div className="card-content">
-                    <div className="title-percentage-row">
-                        <p className="title">Joy</p>
-                        <p className="percentage">33.3%</p>
+            {data.map(item => (
+                <div className="tsx-card" key={item.id}>
+                    <div className="circle-icon">
+                        <img src={item.icon} alt="TSX Icon" />
+                    </div>
+                    <div className="card-content">
+                        <div className="title-percentage-row">
+                            <p className="title">{item.title}</p>
+                            <p className="percentage">{item.percentage}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="tsx-card">
-                <div className="circle-icon">
-                    <img src={Anger} alt="TSX Icon" />
-                </div>
-                <div className="card-content">
-                    <div className="title-percentage-row">
-                        <p className="title">Joy</p>
-                        <p className="percentage">33.3%</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="tsx-card">
-                <div className="circle-icon">
-                    <img src={Anger} alt="TSX Icon" />
-                </div>
-                <div className="card-content">
-                    <div className="title-percentage-row">
-                        <p className="title">Joy</p>
-                        <p className="percentage">33.3%</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="tsx-card">
-                <div className="circle-icon">
-                    <img src={Anger} alt="TSX Icon" />
-                </div>
-                <div className="card-content">
-                    <div className="title-percentage-row">
-                        <p className="title">Joy</p>
-                        <p className="percentage">33.3%</p>
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>
     
 

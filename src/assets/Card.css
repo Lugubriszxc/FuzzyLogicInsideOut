@@ -32,8 +32,8 @@ body {
 
 
 .circle-icon img {
-    width: 100%; 
-    height: 100%; 
+    width: 80%; 
+    height: 80%; 
     object-fit: cover; 
 }
 
@@ -52,10 +52,10 @@ body {
 
 
 .title {
-    font-size: 30px; 
+    font-size: 25px; 
     font-weight: bold; 
     color: #3E3939; 
-    margin-left: 20px;
+   
 }
 
 
