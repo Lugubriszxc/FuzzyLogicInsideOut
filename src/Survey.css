@@ -1,0 +1,12 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.containerSurvey {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto;
+}

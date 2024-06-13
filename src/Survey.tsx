@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, FormGroup, Label, Input, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './Survey.css';
+import './Survey.css';
 
 // Define the type for a question
 interface Question {
@@ -47,27 +47,25 @@ const Survey: React.FC = () => {
     };
 
     return (
-        <div>
-            <Container className='containerSurvey'>
-                <FormGroup className="mb-3">
-                    <Label>{questions[currentIndex].question}</Label>
-                    <Input
-                        type="textarea"
-                        value={questions[currentIndex].answer}
-                        onChange={(e) => handleAnswerChange(e.target.value)}
-                    />
-                </FormGroup>
-                {questions.map((q, index) => (
-                    <div key={index}>
-                        <Label>Answer question #{index + 1}: {q.answer}</Label>
-                        <br />
-                    </div>
-                ))}
+        <>
+            <div  className="center-container" >
+                <Container className='containerSurvey'>
+                    <FormGroup className="mb-3">
+                        <Label>{questions[currentIndex].question}</Label>
+                        <Input
+                            type="textarea"
+                            value={questions[currentIndex].answer}
+                            onChange={(e) => handleAnswerChange(e.target.value)}
+                        />
+                    </FormGroup>
 
-                <Button onClick={prevQuestion} disabled={currentIndex === 0}>Previous</Button>
-                <Button onClick={nextQuestion} disabled={currentIndex === questions.length - 1}>Next</Button>
-            </Container>
-        </div>
+
+                    <Button onClick={prevQuestion} disabled={currentIndex === 0}>Previous</Button>
+                    <Button onClick={nextQuestion} disabled={currentIndex === questions.length - 1}>Next</Button>
+                </Container>
+
+            </div>
+        </>
     );
 };
 
