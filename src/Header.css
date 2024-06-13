@@ -1,0 +1,35 @@
+
+.home .overlap-2 {
+    height: 81px;
+    left: 38px;
+    position: absolute;
+    top: 19px;
+    width: 259px;
+}
+
+.home .text-wrapper-3 {
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+    width: 259px;
+}
+
+.home .text-wrapper-4 {
+    color: #000000;
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 113px;
+}

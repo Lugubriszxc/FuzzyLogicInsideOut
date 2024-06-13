@@ -1,95 +1,59 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&display=swap');
 
-
+body,html{
+    width: 100% !important;
+}
 .home {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-  }
-  
- 
-  
+    width: 100% !important;
+}
 
-  
 
-  
- 
-  .home .text-wrapper-2 {
-    color: #ffffff;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 36px;
-    font-weight: 400;
-    left: 72px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 26px;
-    width: 244px;
-  }
-  
-  .home .overlap-2 {
-    height: 81px;
-    left: 38px;
-    position: absolute;
-    top: 19px;
-    width: 259px;
-  }
-  
-  .home .text-wrapper-3 {
-    color: #000000;
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 40px;
-    width: 259px;
-  }
-  
-  .home .text-wrapper-4 {
-    color: #000000;
-    font-family: "Mouse Memoirs", sans-serif;
-    font-size: 36px;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-    width: 113px;
-  }
-  
-  .blue-container{
-    margin: 0 auto;
-    align-items: center;
-  text-align: center;
-    margin-top: 130px;
-    height: 400px;
-    width: 2000px;
+
+
+.blue-container {
+    margin-top: 100px;
+    height: 500px;
+    width: 1940px;
     background-color: #297CB8;
-    padding: 1px;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
- 
-  .text-wrapper-5{
+    box-sizing: border-box;
+}
+
+.text-wrapper-5, .text-wrapper-6 {
+  
+    margin: 0;
     color: #ffffff;
+    text-align: center;
+}
+
+.text-wrapper-5 {
     font-family: "Mouse Memoirs", sans-serif;
     font-size: 55px;
     width: 100%;
-  }
+}
 
-  .text-wrapper-6{
-    margin: 0 auto;
- 
-    color: #ffffff;
+.text-wrapper-6 {
     font-family: "Montserrat", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     width: 100%;
-    font-weight: 300;
-  }
+    font-weight: 200;
+}
+
+.btn-take{
+    font-family: "Montserrat", sans-serif;
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#B775F9;
+    color: white;
+    border: 0;
+}
