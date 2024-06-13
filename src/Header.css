@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&display=swap');
 
-.home .overlap-2 {
+.overlap-2 {
     height: 81px;
     left: 38px;
     position: absolute;
@@ -7,7 +8,7 @@
     width: 259px;
 }
 
-.home .text-wrapper-3 {
+.text-wrapper-3 {
     color: #000000;
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
@@ -20,7 +21,7 @@
     width: 259px;
 }
 
-.home .text-wrapper-4 {
+.text-wrapper-4 {
     color: #000000;
     font-family: "Mouse Memoirs", sans-serif;
     font-size: 36px;
