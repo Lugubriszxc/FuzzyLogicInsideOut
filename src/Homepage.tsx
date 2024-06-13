@@ -1,4 +1,5 @@
 import './Homepage.css';
+import Header from './Header.tsx'
 
 const HomePage = () => {
     return (<>
@@ -11,10 +12,7 @@ const HomePage = () => {
             <div className="text-wrapper-2">Take the test</div>
           </div>
         </div> */}
-                <div className="overlap-2">
-                    <div className="text-wrapper-3">Emotion Prediction Test</div>
-                    <div className="text-wrapper-4">Inside Out</div>
-                </div>
+                <Header/>
 
                 <div className='blue-container'>
                 <p className="text-wrapper-5">Which Inside Out Character Are You?</p>
