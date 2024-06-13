@@ -1,3 +1,100 @@
-.InsideOuttxt{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-}
+.Prediction .overlap-2 {
+    height: 81px;
+    left: 38px;
+    position: absolute;
+    top: 19px;
+    width: 259px;
+  }
+
+
+
+  
+  
+  .Prediction .text-wrapper-3 {
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+    width: 259px;
+  }
+  
+  .Prediction .text-wrapper-4 {
+    color: #000000;
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 113px;
+  }
+
+  .Prediction .overlap-3 {
+    max-height: 100px;
+    left: 190px;
+    position: absolute;
+    top: 120px;
+  }
+
+  .Prediction .text-wrapper-5{
+    color: #167F53;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 113px;
+  }
+
+  .Prediction .overlap-4{
+    max-height: 100px;
+    left: 150px;
+    position: absolute;
+    top: 200px;
+  }
+
+  .Prediction .text-wrapper-6{
+    color: #5D5555;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: normal;
+    white-space: nowrap;
+    width: 113px;
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+
+  .Prediction .text-wrapper-7{
+    color: #484444;
+    font-family: "Poppins", sans-serif;
+    margin-left: 35px;
+    margin-top: 10px;
+    max-width: 500px;
+  }
+
+  .Prediction .text-wrapper-8{
+    color: #484444;
+    font-family: "Poppins", sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left: 270px;
+    margin-top: -250px;
+    max-width: 500px;
+  }
+
