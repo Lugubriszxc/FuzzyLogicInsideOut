@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Container, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, FormGroup, Label, Input, Button, Card, CardBody, CardHeader } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './Survey.css';
 
 // Define the type for a question
 interface Question {
-    question: string
-    answer: string
-};
+    question: string;
+    answer: string;
+}
 
 // Initial questions
 const initialQuestions: Question[] = [
@@ -26,7 +25,7 @@ const initialQuestions: Question[] = [
 
 const Survey: React.FC = () => {
     const [questions, setQuestions] = useState<Question[]>(initialQuestions);
-    const [currentIndex, setCurrentIndex] = useState(0); // Add state for the current index
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     const handleAnswerChange = (answer: string) => {
         const newQuestions = [...questions];
@@ -47,27 +46,28 @@ const Survey: React.FC = () => {
     };
 
     return (
-        <div>
-            <Container className='containerSurvey'>
-                <FormGroup className="mb-3">
-                    <Label>{questions[currentIndex].question}</Label>
-                    <Input
-                        type="textarea"
-                        value={questions[currentIndex].answer}
-                        onChange={(e) => handleAnswerChange(e.target.value)}
-                    />
-                </FormGroup>
-                {questions.map((q, index) => (
-                    <div key={index}>
-                        <Label>Answer question #{index + 1}: {q.answer}</Label>
-                        <br />
-                    </div>
-                ))}
-
-                <Button onClick={prevQuestion} disabled={currentIndex === 0}>Previous</Button>
-                <Button onClick={nextQuestion} disabled={currentIndex === questions.length - 1}>Next</Button>
-            </Container>
-        </div>
+        <Container fluid className="vh-100">
+            <div className="row justify-content-center align-items-center h-100">
+                <div className="col-md-8">
+                    <Card className="text-center">
+                        <CardHeader className="bg-primary text-white">
+                            <h5>{questions[currentIndex].question}</h5>
+                        </CardHeader>
+                        <CardBody>
+                            <FormGroup>
+                                <Input
+                                    type="textarea"
+                                    value={questions[currentIndex].answer}
+                                    onChange={(e) => handleAnswerChange(e.target.value)}
+                                />
+                            </FormGroup>
+                            <Button onClick={prevQuestion} disabled={currentIndex === 0} className="btn btn-secondary me-2">Previous</Button>
+                            <Button onClick={nextQuestion} disabled={currentIndex === questions.length - 1} className="btn btn-success">Next</Button>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
+        </Container>
     );
 };
 
