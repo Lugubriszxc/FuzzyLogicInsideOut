@@ -1,0 +1,24 @@
+.wholeContainer
+{
+    display: flex;
+    flex-direction: column;
+    background-color: white !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.imageDiv img
+{
+    display: flex;
+    width: 15vw;
+    height: auto;
+
+    margin-top: 5vw;
+}
+
+.hoorayText p
+{
+    margin-top: 20px;
+    font-size: larger;
+    font-weight: bold !important;
+}
