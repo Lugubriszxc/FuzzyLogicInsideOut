@@ -7,11 +7,6 @@ const HomePage = () => {
         <div className="home">
             <Row className="div">
                 <Col md="6">
-                    {/* <div className="overlap-2">
-                        <div className="text-wrapper-3">Emotion Prediction Test</div>
-                        <div className="text-wrapper-4">Inside Out</div>
-                    </div> */}
-
                     <Header />
                 </Col>
                 <Col md="6" className="blue-container">
