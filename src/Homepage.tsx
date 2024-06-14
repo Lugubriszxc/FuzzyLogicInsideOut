@@ -2,6 +2,8 @@ import { Button, Col, Row } from 'reactstrap';
 import './Homepage.css';
 import Header from './Header';
 
+
+
 const HomePage = () => {
     return (<>
         <div className="home">
