@@ -7,6 +7,6 @@ import SurveyFinished from './SurveyFinished.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <SurveyFinished/>
+    <Survey/>
   </React.StrictMode>,
 )

@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { Container, FormGroup, Label, Input, Button, Card, CardBody, CardFooter } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, FormGroup, Input, Button, Card, CardBody, CardFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header'; // Importing Header component
+import image1 from './assets/images/Fear-from-Inside-Out-Standard-render-nr2-inside-out-40129672-723-828.png';
+
+import image3 from './assets/images/png-clipart-pixar-film-information-joy-inside-out-female-character-child-poster-removebg-preview.png';
+import image4 from './assets/images/ba71e95b7e00cd567aebefacbe42ddd5-removebg-preview.png';
+import image5 from './assets/images/png-transparent-inside-out-anger-anger-pixar-emotion-sadness-feeling-inside-out-miscellaneous-textile-fictional-character-removebg-preview.png';
+import image6 from './assets/images/wew.png';
 
 // Define the type for a question
 interface Question {
@@ -24,10 +30,34 @@ const initialQuestions: Question[] = [
     // ... add more questions here
 ];
 
+// Array of imported images
+const imageUrls = [
+    image1,
+    image3,
+    image4,
+    image5,
+    image6,
+    // ... add more imported images here
+];
+
+// Function to shuffle array
+const shuffleArray = (array: string[]): string[] => {
+    return array
+        .map((value) => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+};
+
 const Survey: React.FC = () => {
     const [questions, setQuestions] = useState<Question[]>(initialQuestions);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [backgroundColor, setBackgroundColor] = useState<string>(''); // State for background color
+    const [shuffledImages, setShuffledImages] = useState<string[]>([]); // State for shuffled images
+
+    useEffect(() => {
+        // Shuffle images on component mount
+        setShuffledImages(shuffleArray(imageUrls));
+    }, []);
 
     const handleAnswerChange = (answer: string) => {
         const newQuestions = [...questions];
@@ -35,43 +65,55 @@ const Survey: React.FC = () => {
         setQuestions(newQuestions);
     };
 
-    const changeBackgroundColor = () => {
-        const colors = ['#f0f0f0', '#e6f7ff', '#fff2e6', '#f5f5f5']; // Example background colors
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        setBackgroundColor(randomColor);
-    };
+    
 
     const nextQuestion = () => {
         if (currentIndex < questions.length - 1) {
             setCurrentIndex(currentIndex + 1);
-            changeBackgroundColor(); // Change background color dynamically
+          
         }
     };
 
     const prevQuestion = () => {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
-            changeBackgroundColor(); // Change background color dynamically
+           
         }
     };
 
     return (
-        <div style={{ backgroundColor, minHeight: '100vh' }}> {/* Apply dynamic background color */}
+
+        <div style={{  minHeight: '100vh' }}>
             <Header /> {/* Include the Header component */}
             <Container fluid className="vh-100 d-flex align-items-center justify-content-center">
                 <div style={{ maxWidth: '800px', width: '100%' }}>
-                    <h5 className="mb-3 text-center">{questions[currentIndex].question}</h5> {/* Question title outside of Card */}
-                    <Card className="shadow-sm p-3 mb-5 bg-body rounded">
-                        <CardBody>
-                            <FormGroup>
-                                <Input
-                                    type="textarea"
-                                    value={questions[currentIndex].answer}
-                                    onChange={(e) => handleAnswerChange(e.target.value)}
-                                    className="form-control"
-                                    rows={5}
-                                />
-                            </FormGroup>
+                    <h5 className="mb-3 text-center" style={{ fontSize: '35px' }}>
+
+                        {questions[currentIndex].question}
+                    </h5>
+                    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                        <div style={{ position: 'relative', flex: '0 0 200px', textAlign: 'center' }}>
+                            <img
+                                src={shuffledImages[currentIndex % shuffledImages.length]}
+                                alt={`Question ${currentIndex + 1}`}
+                                style={{ maxWidth: '100%', maxHeight: '300px', marginLeft: '-360px', position: 'absolute', bottom: -239 }}
+                            />
+                        </div>
+                    </div>
+                    <Card className="shadow-sm p-3 mb-5 bg-body rounded d-flex">
+                        <CardBody className="d-flex justify-content-between">
+                            <div style={{ flex: 1 }}>
+                                <FormGroup>
+                                    <Input
+                                        type="textarea"
+                                        value={questions[currentIndex].answer}
+                                        onChange={(e) => handleAnswerChange(e.target.value)}
+                                        className="form-control"
+                                        rows={5}
+                                    />
+                                </FormGroup>
+                            </div>
+
                         </CardBody>
                         <CardFooter className="d-flex justify-content-between">
                             <Button onClick={prevQuestion} disabled={currentIndex === 0} className="btn btn-secondary">Previous</Button>
@@ -80,6 +122,8 @@ const Survey: React.FC = () => {
                     </Card>
                 </div>
             </Container>
+
+
         </div>
     );
 };
