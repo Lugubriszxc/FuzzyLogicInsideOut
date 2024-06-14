@@ -20,7 +20,7 @@ const data = [
   { id: 1, title: "Joy", percentage: "33.3%", icon: Joy }, // Replace Anger with your actual icon import
   { id: 2, title: "Fear", percentage: "50%", icon: Fear }, // Replace Anger with your actual icon import
   { id: 3, title: "Anger", percentage: "25.5%", icon: Anger },
-  { id: 5, title: "Sadness", percentage: "25.5%", icon: Sadness },
+  { id: 5, title: "Sadness", percentage: "25.5%", icon: Disgust },
 ];
 
 const PredictionPage = () => {
@@ -57,24 +57,18 @@ const PredictionPage = () => {
       </div>
 
       <div className="tsx-cards-column">
-            {data.map(item => (
-                <div className="tsx-card" key={item.id}>
-                    <div className="circle-icon">
-                        <img src={item.icon} alt="TSX Icon" />
-                    </div>
-                    <div className="card-content">
-                        <div className="title-percentage-row">
-                            <p className="title">{item.title}</p>
-                            <p className="percentage">{item.percentage}</p>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    
-
-
-      
+        {data.map((item) => (
+          <div className="tsx-card" key={item.id}>
+            <div className="image-container">
+              <img src={item.icon} alt="TSX Icon" className="image" />
+            </div>
+            <div className="card-content">
+             <div className="title">{item.title}</div>
+             <div className="percentage">{item.percentage}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
