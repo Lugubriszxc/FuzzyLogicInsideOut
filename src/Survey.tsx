@@ -3,11 +3,11 @@ import { Container, FormGroup, Input, Button, Card, CardBody, CardFooter } from 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header'; // Importing Header component
 import image1 from './assets/images/Fear-from-Inside-Out-Standard-render-nr2-inside-out-40129672-723-828.png';
-
 import image3 from './assets/images/png-clipart-pixar-film-information-joy-inside-out-female-character-child-poster-removebg-preview.png';
 import image4 from './assets/images/ba71e95b7e00cd567aebefacbe42ddd5-removebg-preview.png';
 import image5 from './assets/images/png-transparent-inside-out-anger-anger-pixar-emotion-sadness-feeling-inside-out-miscellaneous-textile-fictional-character-removebg-preview.png';
 import image6 from './assets/images/wew.png';
+import { Navigate } from 'react-router-dom';
 
 // Define the type for a question
 interface Question {
@@ -53,6 +53,7 @@ const Survey: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [backgroundColor, setBackgroundColor] = useState<string>(''); // State for background color
     const [shuffledImages, setShuffledImages] = useState<string[]>([]); // State for shuffled images
+    const [shouldRedirect, setShouldRedirect] = useState(false);
 
     useEffect(() => {
         // Shuffle images on component mount
@@ -65,19 +66,23 @@ const Survey: React.FC = () => {
         setQuestions(newQuestions);
     };
 
-    
+    const changeBackgroundColor = () => {
+        const colors = ['#FAD693', '#82C293', '#4B93FF', '#E60000', '#655C9E']; // Example background colors
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        setBackgroundColor(randomColor);
+    };
 
     const nextQuestion = () => {
         if (currentIndex < questions.length - 1) {
             setCurrentIndex(currentIndex + 1);
-          
+            changeBackgroundColor(); // Change background color dynamically
         }
     };
 
     const prevQuestion = () => {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
-           
+            changeBackgroundColor(); // Change background color dynamically
         }
     };
 
@@ -117,7 +122,9 @@ const Survey: React.FC = () => {
                         </CardBody>
                         <CardFooter className="d-flex justify-content-between">
                             <Button onClick={prevQuestion} disabled={currentIndex === 0} className="btn btn-secondary">Previous</Button>
-                            <Button onClick={nextQuestion} disabled={currentIndex === questions.length - 1} className="btn btn-success">Next</Button>
+                            <Button onClick={currentIndex === questions.length - 1 ? () => setShouldRedirect(true) : nextQuestion}>{currentIndex === questions.length - 1 ? "Confirm" : "Next"}</Button>
+
+                    {shouldRedirect && <Navigate to="/SurveyFinished" state={{ questions: initialQuestions }} />}
                         </CardFooter>
                     </Card>
                 </div>
