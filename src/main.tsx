@@ -8,8 +8,7 @@ import PredictionPage from './PredictionPage.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <SurveyFinished/>
-    
+    {/* <SurveyFinished/> */}
     <PredictionPage/>
   </React.StrictMode>,
 )
