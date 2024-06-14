@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Survey from './Survey';
 import HomePage from './Homepage.tsx'
 import SurveyFinished from './SurveyFinished.tsx'
+import PredictionPage from './PredictionPage.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
