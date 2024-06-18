@@ -3,12 +3,12 @@ import { Container, FormGroup, Input, Button, Card, CardBody, CardFooter } from 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Survey.css';
 import Header from './Header'; // Importing Header component
-import image1 from './assets/images/Fear-from-Inside-Out-Standard-render-nr2-inside-out-40129672-723-828.png';
-import image3 from './assets/images/png-clipart-pixar-film-information-joy-inside-out-female-character-child-poster-removebg-preview.png';
-import image4 from './assets/images/ba71e95b7e00cd567aebefacbe42ddd5-removebg-preview.png';
-import image5 from './assets/images/png-transparent-inside-out-anger-anger-pixar-emotion-sadness-feeling-inside-out-miscellaneous-textile-fictional-character-removebg-preview.png';
-import image6 from './assets/images/wew.png';
-import angerImage from './assets/images/png-transparent-inside-out-anger-anger-pixar-emotion-sadness-feeling-inside-out-miscellaneous-textile-fictional-character-removebg-preview.png'; // Update with your image path
+import image1 from './assets/images/fearfb.png';
+import image3 from './assets/images/joyfb.png';
+import image4 from './assets/images/disgustfb.png';
+import image5 from './assets/images/sadfb.png';
+import image6 from './assets/images/inside_out_2_anxiety_png_by_docbuffflash82_dgfo4uj-pre.png';
+import angerImage from './assets/images/angerfb.png'; // Update with your image path
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2'; // Import SweetAlert2
 

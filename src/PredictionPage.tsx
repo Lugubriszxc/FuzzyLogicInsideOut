@@ -81,7 +81,7 @@ const PredictionPage = () => {
 
 const highestValue = Math.max(...emotionsValue.map(emotion => Object.values(emotion)[0]));
 const highestValueObject = emotionsValue.find(emotion => Object.values(emotion)[0] === highestValue);
-console.log(highestValueObject)
+
 
   const rawData = emotionsValue.filter(
     (item) => item !== highestValueObject
@@ -170,7 +170,7 @@ console.log(highestValueObject)
           return (
             <div
               className="tsx-card"
-           
+             key={item.emotion}
               style={{ backgroundColor: color }}
             >
               <div className="image-container">
