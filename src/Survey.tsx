@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Container, FormGroup, Input, Button, Card, CardBody, CardFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header'; // Importing Header component
-import image1 from './assets/images/Fear-from-Inside-Out-Standard-render-nr2-inside-out-40129672-723-828.png';
-import image3 from './assets/images/png-clipart-pixar-film-information-joy-inside-out-female-character-child-poster-removebg-preview.png';
-import image4 from './assets/images/ba71e95b7e00cd567aebefacbe42ddd5-removebg-preview.png';
-import image5 from './assets/images/png-transparent-inside-out-anger-anger-pixar-emotion-sadness-feeling-inside-out-miscellaneous-textile-fictional-character-removebg-preview.png';
-import image6 from './assets/images/wew.png';
+import image1 from './assets/images/fearfb.png';
+import image3 from './assets/images/joyfb.png';
+import image4 from './assets/images/disgustfb.png';
+import image5 from './assets/images/sadfb.png';
+import image6 from './assets/images/angerfb.png';
 import { Navigate } from 'react-router-dom';
 
 // Define the type for a question

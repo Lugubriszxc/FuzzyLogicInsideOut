@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Survey />} />
         <Route path="/SurveyFinished" element={<SurveyFinished />} />
+        <Route path="/PredictionPage" element={<PredictionPage />} />
       </Routes>
     </Router>
   </React.StrictMode>,
