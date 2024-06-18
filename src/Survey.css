@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&display=swap');
+
 /* .center-container {
     display: flex;
     justify-content: center;
@@ -10,3 +12,7 @@
     max-width: 600px; 
     margin: 0 auto;
 } */
+
+#question{
+    font-family: "Mouse Memoirs", sans-serif;
+}
