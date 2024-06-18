@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, FormGroup, Input, Button, Card, CardBody, CardFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Survey.css';
 import Header from './Header'; // Importing Header component
 import image1 from './assets/images/Fear-from-Inside-Out-Standard-render-nr2-inside-out-40129672-723-828.png';
 import image3 from './assets/images/png-clipart-pixar-film-information-joy-inside-out-female-character-child-poster-removebg-preview.png';
@@ -57,6 +58,8 @@ const Survey: React.FC = () => {
     const [shuffledImages, setShuffledImages] = useState<string[]>([]); // State for shuffled images
     const [shouldRedirect, setShouldRedirect] = useState(false);
 
+    
+
     useEffect(() => {
         // Shuffle images on component mount
         setShuffledImages(shuffleArray(imageUrls));
@@ -112,7 +115,7 @@ const Survey: React.FC = () => {
             <Header /> {/* Include the Header component */}
             <Container fluid className="vh-100 d-flex align-items-center justify-content-center">
                 <div style={{ maxWidth: '800px', width: '100%' }}>
-                    <h5 className="mb-3 text-center" style={{ fontSize: '35px' }}>
+                    <h5 id="question" className="mb-3 text-center" style={{ fontSize: '35px' }}>
                         {questions[currentIndex].question}
                     </h5>
                     <div style={{ display: 'flex', alignItems: 'flex-start' }}>
