@@ -2,20 +2,28 @@ import imageNote from "./assets/images/noteCheckImg.svg";
 import "./SurveyFinished.css";
 import Header from "./Header.tsx";
 import { Button, Col, Row } from "reactstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
+import React, { useState } from "react";
 
 interface Question {
   question: string;
   answer: string;
 }
 
+interface EmotionValue {
+  emotion: string;
+  value: number;
+}
+
 const SurveyFinished = () => {
-  // Define the type for a question
+  const [shouldRedirectToPage, setShouldRedirectToPage] = useState(false);
+  const [emotionsValue, setEmotionsValue] = useState<EmotionValue[]>([]); // State to store emotions values
+
   const location = useLocation();
-  let questions = [];
+  let questions: Question[] = []; // Define the type for questions array
 
   if (location.state) {
-    questions = location.state.questions;
+    questions = location.state.questions as Question[]; // Cast to Question[] type
     console.log(questions);
   }
 
@@ -32,8 +40,11 @@ const SurveyFinished = () => {
         }
       );
       if (response.ok) {
-        const data = await response.json(); // Extract data from response
+        const data: EmotionValue[] = await response.json(); // Extract data from response and cast to EmotionValue[]
         console.log(data);
+        setEmotionsValue(data); // Update state with the fetched emotions values
+        setShouldRedirectToPage(true);
+        
       } else {
         console.error(`Error ${response.status}`);
       }
@@ -41,6 +52,7 @@ const SurveyFinished = () => {
       console.error("Error submitting form data:", error);
     }
   };
+
   return (
     <>
       <div className="parentContainer">
@@ -62,6 +74,10 @@ const SurveyFinished = () => {
               <Button className="btnResult" onClick={handleSubmit}>
                 See Result
               </Button>
+
+              {shouldRedirectToPage && (
+                <Navigate to="/PredictionPage" state={{ result: emotionsValue }} />
+              )}
             </Col>
           </Col>
         </Row>
