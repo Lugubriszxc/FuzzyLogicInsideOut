@@ -112,7 +112,9 @@ const PredictionPage = () => {
           />
         )}
 
-        <div className="text-wrapper-6 ">{emotionText}</div>
+        <div className="text-wrapper-6 ">
+          {emotionText} (MBTI Based Results)
+        </div>
 
         <div className="text-wrapper-7 ">
           {emotionText === "Joy" ? (
