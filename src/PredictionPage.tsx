@@ -122,7 +122,7 @@ const PredictionPage = () => {
               characterized by their enthusiasm, positivity, and tendency to
               seek out new experiences, which aligns with the emotion of Joy.
             </>
-          ) : emotionText === "Sad" ? (
+          ) : emotionText === "Sadness" ? (
             <>
               INFP (Introverted, Intuitive, Feeling, Perceiving) <br />
               INFJ (Introverted, Intuitive, Feeling, Judging) <br /> <br />
